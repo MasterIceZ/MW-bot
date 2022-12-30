@@ -20,6 +20,7 @@ async def on_message(msg):
 @client.event
 async def on_ready():
   print("Bot is now ready to bow MW!")
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="MW"))
 
 print(token)
 client.run(token)
