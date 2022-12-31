@@ -21,7 +21,7 @@ async def on_message(msg):
   if str(msg.author.id) == target:
     # print("Locked Target!")
     rnd_value = random.randint(1, 10)
-    if rnd_value >=7:
+    if rnd_value >= 5:
       await msg.add_reaction('🇲')
       await msg.add_reaction('🇼')
 
