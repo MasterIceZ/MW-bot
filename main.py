@@ -2,6 +2,7 @@ import discord
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
+import random
 
 load_dotenv()
 token = os.getenv('TOKEN')
@@ -19,8 +20,10 @@ async def on_message(msg):
     return 
   if str(msg.author.id) == target:
     # print("Locked Target!")
-    await msg.add_reaction('🇲')
-    await msg.add_reaction('🇼')
+    rnd_value = random.randint(1, 10)
+    if rnd_value >=7:
+      await msg.add_reaction('🇲')
+      await msg.add_reaction('🇼')
 
 @client.event
 async def on_ready():
